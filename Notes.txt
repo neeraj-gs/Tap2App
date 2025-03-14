@@ -1,0 +1,35 @@
+A Website that creates Apps based on prompts , 
+    Can create React-Native Based Applications
+    Can Edit Files with inbuilt Vs-like code editor 
+    Can Test it on Web or App
+
+React Native Expo 
+Expo Router
+LLM - Multiplayer games architecture 
+Simple Approach 
+
+Agent - Tells LLM to do something on behalf of user 
+Prompt Engineering
+
+
+Tech Stack
+Next.js
+Bun 
+ASG on AWS 
+LLM APIs 
+
+
+
+Overview 
+    Building a Website that lets people to build Mobile Apps using AI 
+    bolt is the first company to do it 
+    Users can see the demo on the Web or on Mobile as well in real time 
+    Any Change made in the App , Ships eveything in Real time and can test it on both website and phone
+    Can export it into .apk and can publish on Google Play Store
+
+
+
+
+
+
+
