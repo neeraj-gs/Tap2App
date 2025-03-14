@@ -28,8 +28,23 @@ Overview
     Can export it into .apk and can publish on Google Play Store
 
 
+React Native architecture
+    A bunch of tsx or jsx files, These are react native components 
+    div is replaced by <View> , <Text> for writing texts instead of span or more 
+    All gets Bundled into a bundle.js file using metro bundles [Similar to webpack or babel as in react ]
+        budle.js is all that is needed to run a Mobile App , The state of Mobile app is defined by the bundle.js file 
 
+    Serving React native file is simple as serving a bundle.js , Easier than bundling Swift/Java/Kotlin Applications 
+    Written in Javascript , View transalates to Something else as in Androind app 
+    React Native Application 
+        A Native thread that is talking to JS code bundle.js , Tells native layer or dictattes how the app is workgin or rendering 
+        .apk files also have a js code , bundler.js 
 
+    In React native we only serve js file bundle.js , in website we serve html,css and js 
 
+High Level Architecture
+    Frontend ---(Create an App Prompt)--> Primary Backend ---> LLM [Talk to LLM with an exact prompt]
+    LLM --> Backend[Where to store files? ], WHen user is on frontend, they can see the Code on the right 
+    
 
 
