@@ -118,7 +118,13 @@ Router Architecture
 
 
 High Level Architecture
-
+    Primary FE in React 
+    Primary BE in Nodejs
+    Routing Service that interacts directly through APIS to AWS 
+    Primary Postgres s Database 
+    Redis Space where routers are tracked for workers 
+    Field of AWS machines where we are running Rremote VS code instance, Taling to LLM, Backup files to S3, Self Destruct , INteract with AWS and Router 
+    
 
 
 
