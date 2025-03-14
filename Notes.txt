@@ -45,6 +45,39 @@ React Native architecture
 High Level Architecture
     Frontend ---(Create an App Prompt)--> Primary Backend ---> LLM [Talk to LLM with an exact prompt]
     LLM --> Backend[Where to store files? ], WHen user is on frontend, they can see the Code on the right 
+
+
+System Architecture 
+
+Primary Frontend -------> Primary Backend 
+[New Arena for apps]    [Simple Auth and retrieves]
+
+Until the Arean environemtn si opened, we are interacting with the backend 
+After entering the Arena 
+    Backend should not do anything , It will SPin a new machine Worker Machine , Let the frontend know the worker machine is whatever ip address 
+    Any Prompts and Talks is directly with the worker servers 
+    Worker Machine interacts with LLM and generates Chess Application 
+    LLM Gives the responses and code 
+    Users Frontend is connected to worker with remote VS instance 
+        We needed an independent WOrker because Worker has to do a lot of things 
+            Run Vs Code Instantly and remotely
+            Talk to LLM,
+            Enrich the File System 
+            Backup all the data to S3, Have backup of Vs Code 
     
+    Based on Multiple Users we have multiple Workers based on Arena Screens 
+        Each User is interacting with their Worker 
+        When Session is closed, we will stop the worker 
+
+        Heart Beating - Machine hits worker every 5 seconds , WOrker response [Ping Pong message]
+            Tells Worker there is someone there , If there is no Heartbeat received over 5 min , User has left and it kills the worker it self 
+
+    If Collaborative features,  
+        All Devs get connected to same Worker machine 
+        Kills only if all are left 
+
+URL or QR to test on phone , It is servinf the bundle.js to preview 
+    They get js file from worker machine 
+    expo , Will expose the app or js file to a URL
 
 
