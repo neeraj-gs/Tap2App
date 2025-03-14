@@ -81,3 +81,49 @@ URL or QR to test on phone , It is servinf the bundle.js to preview
     expo , Will expose the app or js file to a URL
 
 
+Router Architecture 
+    Get Decidated Compute for Mulitple People working on same project , FOr Multiplayer or Collaborative features 
+
+    Frontned --> Primary BE 
+        User Requests Arena , Primary backend needs to be aware of all workers that are up and it needs to fetch one of the worker and assign it 
+
+    Another Backend Called Router 
+        Routes To a specific Worker 
+        Worker needs to make sure there is enough compute 
+            If no one on Website , it has to tell AWS , to Keep a Buffer count/ Warm Pool Count - 3 
+                If zero users , there are still 3 workers available to serve to a user immediatelt 
+            THe 3 workers keeps hearbeating to the router , saying tis available and you can assign a arena 
+
+        Starter script , Start http server that tells router that worker is up 
+            Stores the workers url on a server [Redis Server ]
+            FE Directly communicates with router and then assigns one server 
+            Router keeps track of the machines or availabl eworkers
+            Room id is also shared , that spins up the arena for specific workers
+
+            Worker makes sure Arena is working fine , By Communication and Serving files and storing files, LLM INteraction and more 
+            What if Worker fails,
+                Then it will reassign a new machine 
+                Rotuer is connected to user via web socket server 
+
+
+            Keep Talkign to AWS and Router such thatAlways there has to be 3 free machines , 
+                If one Occupied , AWS has to add more worker machine and then assign to Arena 
+
+    Worst Thing: 
+        More Cloud Bills , Based on Traffic 
+        Need to have compute ready 
+        Wait for 5 minutes to Cool Down
+
+
+
+
+High Level Architecture
+
+
+
+
+
+
+
+
+
