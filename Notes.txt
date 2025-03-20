@@ -128,7 +128,16 @@ High Level Architecture
 Clerk for Authentication
 Bun for Backend 
 
+Clerk 
+    We export a public key from clerk, They own the sign up page 
+    They give some public and provate keys,
+    Clerk as Auth and our pwn backend , we can export public key 
 
+    Public key is wnough to decode the jwt token 
+
+    Frontend ---> Hit Clerk Directly and does not hit Primary backend , 
+    They get back a Token , Using that token they can call our backend , Send token as authHeader 
+    Public key from clerk can be used to check if the user is authentication from clerk 
 
 
 
