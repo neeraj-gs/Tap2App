@@ -25,7 +25,7 @@ app.post("/createProject",authMiddleware ,async(req,res)=>{
 //Get Projets of a Specific User
 app.get("/getProjects",authMiddleware,async(req,res)=>{
     const userId = req.userId;
-    const project = await prismaClient.project.findFirst({
+    const project = await prismaClient.project.findMany({
         where:{userId}
     });
     res.json(project)
