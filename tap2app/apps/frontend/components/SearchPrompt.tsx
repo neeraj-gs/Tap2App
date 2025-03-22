@@ -47,6 +47,9 @@ export function SearchPrompt() {
             type="submit" 
             className="absolute right-1.5 top-1/2 transform -translate-y-1/2 bg-primary text-black hover:bg-primary/90"
             size="sm"
+            onClick={()=>{
+              
+            }}
           >
             Search
           </Button>
