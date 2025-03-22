@@ -140,6 +140,37 @@ Clerk
     Public key from clerk can be used to check if the user is authentication from clerk 
 
 
+Frontend Needs to Talk to a Router Service 
+    Router will assign to the right worker available'
+    A single worker now we start 
+        Arena screen connects to worker , there is a http. server on the Arean screen,  LLM gives a response , Then uploads alll the fiels to S3 to save it 
+        A VS Code instance should be spinned up 
+
+        2 ports for worker
+            1. Frontend - Heartbeat and more 
+            2.VS code Instance such that Fe can edit files on server directly 
+
+Worker backend 
+    Has a FE Virtual VS Code 
+    Connects to LLM 
+    Conntects to FE for Heartbeat
+
+
+LLMs 101 
+    Send a query to LLM -> LLM gives 10 files that tells create these files and so on 
+    We need to parse the text and then dump it into a file, It also tells to install dependecies and so on
+    Get Response in a format and then fix it and get the cdoe 
+    Expo navigation is similar to Nextjs 
+    Need to specify a lot of prompts engineering  
+    
+
+
+
+
+
+
+
+
 
 
 
