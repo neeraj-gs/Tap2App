@@ -1,7 +1,9 @@
 "use client";
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-
+import axios from 'axios';
+import { useAuth } from '@clerk/nextjs';
+import { BACKEND_URL } from '@/config';
 type PromptIdea = {
   id: number;
   text: string;
@@ -16,6 +18,7 @@ const promptIdeas: PromptIdea[] = [
 
 export function SearchPrompt() {
   const [prompt, setPrompt] = useState("");
+  const {getToken} = useAuth();
   
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,8 +50,16 @@ export function SearchPrompt() {
             type="submit" 
             className="absolute right-1.5 top-1/2 transform -translate-y-1/2 bg-primary text-black hover:bg-primary/90"
             size="sm"
-            onClick={()=>{
-              
+            onClick={async()=>{
+              const token = await getToken();
+              const response = await axios.post(`${BACKEND_URL}/createProject`,{
+                prompt: prompt
+              },{
+                headers:{
+                  Authorization: `Bearer ${token}`
+                }
+              })
+              console.log(response.data)
             }}
           >
             Search
